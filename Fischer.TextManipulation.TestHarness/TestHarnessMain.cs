@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Fischer.TextManipulation.TextLibraries;
 
 namespace Fischer.TextManipulation.TestHarness
 {
@@ -26,6 +27,27 @@ namespace Fischer.TextManipulation.TestHarness
                 //Add the path to the textbox
                 txtFilePath.Text = fileDialog.FileName; 
             }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            TextProcessingLibrary library = new TextProcessingLibrary();
+            //Clear any existing results
+            lstSearchResults.Items.Clear();
+
+            //Get the matches
+            List<string> resultList = library.GetAllSearchMatches(txtFilePath.Text, txtSearchText.Text);
+            foreach (var result in resultList)
+            {
+                lstSearchResults.Items.Add(result);
+            }
+            
+            MessageBox.Show(string.Format($"There are {resultList.Count} matches."));
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

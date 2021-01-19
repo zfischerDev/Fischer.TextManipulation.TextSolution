@@ -30,15 +30,15 @@ namespace Fischer.TextManipulation.TestHarness
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnSelectFile = new System.Windows.Forms.Button();
-            this.txtFilePath = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.txtSearchText = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtFilePath = new System.Windows.Forms.TextBox();
+            this.btnSelectFile = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lstSearchResults = new System.Windows.Forms.ListBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.btnClose = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -57,22 +57,13 @@ namespace Fischer.TextManipulation.TestHarness
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "File and Search Text";
             // 
-            // btnSelectFile
+            // txtSearchText
             // 
-            this.btnSelectFile.Location = new System.Drawing.Point(8, 28);
-            this.btnSelectFile.Name = "btnSelectFile";
-            this.btnSelectFile.Size = new System.Drawing.Size(149, 29);
-            this.btnSelectFile.TabIndex = 0;
-            this.btnSelectFile.Text = "1. Select File";
-            this.btnSelectFile.UseVisualStyleBackColor = true;
-            this.btnSelectFile.Click += new System.EventHandler(this.btnSelectFile_Click);
-            // 
-            // txtFilePath
-            // 
-            this.txtFilePath.Location = new System.Drawing.Point(163, 29);
-            this.txtFilePath.Name = "txtFilePath";
-            this.txtFilePath.Size = new System.Drawing.Size(547, 27);
-            this.txtFilePath.TabIndex = 1;
+            this.txtSearchText.Location = new System.Drawing.Point(857, 29);
+            this.txtSearchText.Name = "txtSearchText";
+            this.txtSearchText.Size = new System.Drawing.Size(325, 27);
+            this.txtSearchText.TabIndex = 3;
+            this.txtSearchText.Text = "Jesus";
             // 
             // label1
             // 
@@ -83,19 +74,30 @@ namespace Fischer.TextManipulation.TestHarness
             this.label1.TabIndex = 2;
             this.label1.Text = "2. Add Search Text";
             // 
-            // txtSearchText
+            // txtFilePath
             // 
-            this.txtSearchText.Location = new System.Drawing.Point(857, 29);
-            this.txtSearchText.Name = "txtSearchText";
-            this.txtSearchText.Size = new System.Drawing.Size(325, 27);
-            this.txtSearchText.TabIndex = 3;
+            this.txtFilePath.Location = new System.Drawing.Point(163, 29);
+            this.txtFilePath.Name = "txtFilePath";
+            this.txtFilePath.Size = new System.Drawing.Size(547, 27);
+            this.txtFilePath.TabIndex = 1;
+            this.txtFilePath.Text = "C:\\Users\\Timothy M. Fischer\\Desktop\\TheBibleText.txt";
+            // 
+            // btnSelectFile
+            // 
+            this.btnSelectFile.Location = new System.Drawing.Point(8, 28);
+            this.btnSelectFile.Name = "btnSelectFile";
+            this.btnSelectFile.Size = new System.Drawing.Size(149, 29);
+            this.btnSelectFile.TabIndex = 0;
+            this.btnSelectFile.Text = "1. Select File";
+            this.btnSelectFile.UseVisualStyleBackColor = true;
+            this.btnSelectFile.Click += new System.EventHandler(this.btnSelectFile_Click);
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.lstSearchResults);
             this.groupBox2.Location = new System.Drawing.Point(12, 78);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1197, 342);
+            this.groupBox2.Size = new System.Drawing.Size(1197, 581);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Results List";
@@ -106,15 +108,16 @@ namespace Fischer.TextManipulation.TestHarness
             this.lstSearchResults.ItemHeight = 20;
             this.lstSearchResults.Location = new System.Drawing.Point(8, 24);
             this.lstSearchResults.Name = "lstSearchResults";
-            this.lstSearchResults.Size = new System.Drawing.Size(1174, 304);
+            this.lstSearchResults.Size = new System.Drawing.Size(1174, 544);
             this.lstSearchResults.TabIndex = 0;
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.btnClose);
             this.groupBox3.Controls.Add(this.btnSearch);
-            this.groupBox3.Location = new System.Drawing.Point(20, 658);
+            this.groupBox3.Location = new System.Drawing.Point(12, 658);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(1174, 56);
+            this.groupBox3.Size = new System.Drawing.Size(1197, 56);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             // 
@@ -126,22 +129,23 @@ namespace Fischer.TextManipulation.TestHarness
             this.btnSearch.TabIndex = 0;
             this.btnSearch.Text = "3. Run Search";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // groupBox4
+            // btnClose
             // 
-            this.groupBox4.Location = new System.Drawing.Point(12, 427);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(1199, 125);
-            this.groupBox4.TabIndex = 3;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "groupBox4";
+            this.btnClose.Location = new System.Drawing.Point(615, 19);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(567, 29);
+            this.btnClose.TabIndex = 1;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // TestHarnessMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1223, 726);
-            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -166,7 +170,7 @@ namespace Fischer.TextManipulation.TestHarness
         private System.Windows.Forms.ListBox lstSearchResults;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Button btnClose;
     }
 }
 
